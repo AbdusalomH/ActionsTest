@@ -19,8 +19,8 @@ jobs:
       - name: Set up Xcode
         run: sudo xcode-select --switch /Applications/Xcode.app
 
-      - name: Install dependencies (if using CocoaPods)
-        run: pod install --repo-update
+      # - name: Install dependencies
+      #   run: pod install --repo-update
 
       - name: Build and Test
         run: xcodebuild test -workspace YourApp.xcworkspace -scheme YourScheme -destination 'platform=iOS Simulator,name=iPhone 14,OS=16.0'
