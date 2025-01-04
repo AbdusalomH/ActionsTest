@@ -10,40 +10,14 @@ on:
 
 jobs:
   build:
-    name: Build and Test iOS App
     runs-on: macos-latest
 
     steps:
-    # 1. Checkout the code
     - name: Checkout source code
       uses: actions/checkout@v3
 
-    # 2. Set up Xcode environment
     - name: Set up Xcode environment
-      run: |
-        sudo xcode-select -switch /Applications/Xcode_15.4.app/Contents/Developer
+      run: sudo xcode-select -switch /Applications/Xcode_15.4.app/Contents/Developer
 
-    # 3. Set up code signing
-    - name: Set up code signing
-      run: |
-        echo "${{ secrets.APPLE_CERTIFICATE }}" | base64 --decode > certificate.p12
-        echo "${{ secrets.PROVISIONING_PROFILE }}" | base64 --decode > profile.mobileprovision
-        security import certificate.p12 -P "${{ secrets.APPLE_DEVELOPER_PASSWORD }}" -T /usr/bin/codesign
-        mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
-        mv profile.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/
-
-    # 4. Install dependencies
-    # - name: Install dependencies
-    #   run: |
-    #     brew install cocoapods || echo "CocoaPods already installed"
-    #     pod install
-
-    # 5. Build and test the app
     - name: Build and Test
-      run: xcodebuild test -workspace ActionsTests.xcworkspace -scheme ActionsTests -destination 'platform=iOS Simulator,name=iPhone 14,OS=16.0' -allowProvisioningUpdates
-
-    # 6. Clean up temporary files
-    - name: Clean up
-      run: |
-        rm -f certificate.p12
-        rm -f profile.mobileprovision
+      run: xcodebuild test -project ActionsTests.xcodeproj -scheme ActionsTests -destination 'platform=iOS Simulator,name=iPhone 14,OS=16.0' -allowProvisioningUpdates
