@@ -22,8 +22,8 @@ jobs:
         mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
         mv profile.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/
 
-    - name: Install dependencies
-      run: pod install # Если используете CocoaPods, иначе пропустите этот шаг.
+    # - name: Install dependencies
+    #   run: pod install # Если используете CocoaPods, иначе пропустите этот шаг.
 
     - name: Build and Test
       run: |
