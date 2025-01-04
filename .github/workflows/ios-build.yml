@@ -23,4 +23,4 @@ jobs:
       #   run: pod install --repo-update
 
       - name: Build and Test
-        run: xcodebuild test -workspace YourApp.xcworkspace -scheme YourScheme -destination 'platform=iOS Simulator,name=iPhone 14,OS=16.0'
+        run: xcodebuild test -workspace ActionsTests.xcodeproj -scheme ActionsTests -destination 'platform=iOS Simulator,name=iPhone 14,OS=16.0'
