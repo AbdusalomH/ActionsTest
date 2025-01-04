@@ -14,13 +14,13 @@ jobs:
     - name: Checkout source code
       uses: actions/checkout@v3
 
-    - name: Set up Xcode
-      run: |
-        echo "${{ secrets.APPLE_CERTIFICATE }}" | base64 --decode > certificate.p12
-        echo "${{ secrets.PROVISIONING_PROFILE }}" | base64 --decode > profile.mobileprovision
-        security import certificate.p12 -P "$APPLE_DEVELOPER_PASSWORD" -T /usr/bin/codesign
-        mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
-        mv profile.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/
+    - name: Set up code signing
+    run: |
+    echo "${{ secrets.APPLE_CERTIFICATE }}" | base64 --decode > certificate.p12
+    echo "${{ secrets.PROVISIONING_PROFILE }}" | base64 --decode > profile.mobileprovision
+    security import certificate.p12 -P "${{ secrets.APPLE_DEVELOPER_PASSWORD }}" -T /usr/bin/codesign
+    mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
+    mv profile.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/
 
     # - name: Install dependencies
     #   run: pod install # Если используете CocoaPods, иначе пропустите этот шаг.
