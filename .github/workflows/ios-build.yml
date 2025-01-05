@@ -1,5 +1,4 @@
-name: iOS Build & Test
-
+name: iOS Build and Test
 
 on:
   push:
@@ -10,13 +9,15 @@ on:
       - main
 
 jobs:
-  build-and-test:
+  build:
     runs-on: macos-latest
 
     steps:
-      - name: Checkout source code
-        uses: actions/checkout@v3
+    - name: Checkout source code
+      uses: actions/checkout@v3
 
-      - name: Build and Test
-        run: xcodebuild test -project ActionsTests.xcodeproj -scheme ActionsTests -destination 'platform=iOS Simulator,name=iPhone 14,OS=16.0'
+    - name: Set up Xcode environment
+      run: sudo xcode-select -switch /Applications/Xcode_15.4.app/Contents/Developer
 
+    - name: Build and Test
+      run: xcodebuild test -project ActionsTests.xcodeproj -scheme ActionsTests -destination 'platform=iOS Simulator,name=iPhone 14,OS=16.0' -allowProvisioningUpdates
