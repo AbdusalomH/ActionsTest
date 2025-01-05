@@ -13,6 +13,9 @@
 		B92FF3CD2D2910AA0065F3C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B92FF3CC2D2910AA0065F3C0 /* Assets.xcassets */; };
 		B92FF3D02D2910AA0065F3C0 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = B92FF3CF2D2910AA0065F3C0 /* Base */; };
 		B92FF3DE2D291D320065F3C0 /* ActionsTestsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92FF3DD2D291D320065F3C0 /* ActionsTestsTests.swift */; };
+		B92FF3E52D2A691C0065F3C0 /* HamburgerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92FF3E42D2A691C0065F3C0 /* HamburgerVC.swift */; };
+		B92FF3E72D2A6EC10065F3C0 /* HotdogsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92FF3E62D2A6EC10065F3C0 /* HotdogsVC.swift */; };
+		B92FF3E92D2A6ED20065F3C0 /* LavashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92FF3E82D2A6ED20065F3C0 /* LavashVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,9 @@
 		B92FF3D12D2910AA0065F3C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B92FF3DB2D291D320065F3C0 /* ActionsTestsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ActionsTestsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B92FF3DD2D291D320065F3C0 /* ActionsTestsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionsTestsTests.swift; sourceTree = "<group>"; };
+		B92FF3E42D2A691C0065F3C0 /* HamburgerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerVC.swift; sourceTree = "<group>"; };
+		B92FF3E62D2A6EC10065F3C0 /* HotdogsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotdogsVC.swift; sourceTree = "<group>"; };
+		B92FF3E82D2A6ED20065F3C0 /* LavashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LavashVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +88,9 @@
 				B92FF3CC2D2910AA0065F3C0 /* Assets.xcassets */,
 				B92FF3CE2D2910AA0065F3C0 /* LaunchScreen.storyboard */,
 				B92FF3D12D2910AA0065F3C0 /* Info.plist */,
+				B92FF3E42D2A691C0065F3C0 /* HamburgerVC.swift */,
+				B92FF3E62D2A6EC10065F3C0 /* HotdogsVC.swift */,
+				B92FF3E82D2A6ED20065F3C0 /* LavashVC.swift */,
 			);
 			path = ActionsTests;
 			sourceTree = "<group>";
@@ -195,8 +204,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B92FF3C82D2910A80065F3C0 /* MyViewController.swift in Sources */,
+				B92FF3E92D2A6ED20065F3C0 /* LavashVC.swift in Sources */,
 				B92FF3C42D2910A80065F3C0 /* AppDelegate.swift in Sources */,
+				B92FF3E52D2A691C0065F3C0 /* HamburgerVC.swift in Sources */,
 				B92FF3C62D2910A80065F3C0 /* SceneDelegate.swift in Sources */,
+				B92FF3E72D2A6EC10065F3C0 /* HotdogsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,7 +420,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = HD5QFP6NH3;
@@ -429,7 +441,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = HD5QFP6NH3;
